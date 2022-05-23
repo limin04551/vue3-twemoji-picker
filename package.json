@@ -1,0 +1,54 @@
+{
+   "name":"vue3-twemoji-picker",
+   "version": "0.1.0",
+  "private": false,
+  "packageManager": "pnpm@7.0.0",
+  "main": "./dist/vue3-twemoji-picker.umd.js",
+  "module": "./dist/vue3-twemoji-picker.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-twemoji-picker.es.js",
+      "require": "./dist/vue3-twemoji-picker.umd.js"
+    }
+  },
+   "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --port 3334 --open",
+    "lint": "eslint .",
+    "typecheck": "vue-tsc --noEmit",
+    "preview": "vite preview",
+    "test": "vitest",
+    "build:emoji": "vue-cli-service build --target lib --dest lib src/components/index.js"
+  },
+  "dependencies": {
+    "@vueuse/core": "^8.3.1",
+    "sass": "^1.52.0",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.22.0",
+    "@iconify-json/carbon": "^1.1.4",
+    "@iconify-json/lucide": "^1.1.25",
+    "@types/node": "^17.0.31",
+    "@unocss/preset-icons": "^0.34.0",
+    "@unocss/reset": "^0.32.9",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/test-utils": "^2.0.0-rc.21",
+    "eslint": "^8.14.0",
+    "jsdom": "^19.0.0",
+    "pnpm": "^7.0.0",
+    "typescript": "^4.6.4",
+    "unocss": "^0.32.9",
+    "unplugin-auto-import": "^0.7.1",
+    "unplugin-vue-components": "^0.19.3",
+    "vite": "^2.9.7",
+    "vite-plugin-pages": "^0.23.0",
+    "vitest": "^0.10.1",
+    "vue-tsc": "^0.34.11"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}

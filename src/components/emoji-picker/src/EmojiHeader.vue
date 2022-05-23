@@ -1,0 +1,113 @@
+<script lang="ts" setup>
+import { STORE_KEY, SVG_EMOJI_IMG_SRC } from './emoji-picker.d'
+
+const store = inject(STORE_KEY)
+const { options, search, emojiGroups, activeGroup, staticText } = toRefs(store!.state!)
+const updateActiveGroup = store!.updateActiveGroup
+const updateSearch = store!.updateSearch
+
+const searchValue = computed({
+  get: () => search.value,
+  set: (value: string) => updateSearch(value),
+})
+
+</script>
+<template>
+  <div v-if="!options.hasGroupIcons || options.hasSearch" class="emoji-header">
+    <div v-if="options.hasSearch" class="emoji-search">
+      <div i-lucide-search c="#aaaaaa80" />
+      <input ref="searchContainer" v-model="searchValue" type="text" :placeholder="staticText.search_placeholder">
+    </div>
+    <div v-if="options.hasGroupIcons" class="emoji-groups">
+      <div
+        v-for="group in emojiGroups" :key="group.key" class="emoji-group"
+        @click="group.emojis.length > 0 ? updateActiveGroup(group.key) : ''"
+      >
+        <img :class="group.key === activeGroup && searchValue==''? 'selected' : ''" :src="`${SVG_EMOJI_IMG_SRC}${group.u}.svg`" alt="">
+        <div :class="['bottom-block',group.key === activeGroup && searchValue==''?'selected2':'']" />
+      </div>
+    </div>
+    <div v-if="options.hasGroupIcons || options.hasSearch" class="emoji-spacing" />
+  </div>
+</template>
+<style lang="scss" scoped>
+.emoji-header {
+  padding: 0 .5rem;
+
+  .emoji-spacing {
+    height: 1px;
+    background-color: #dddddd80;
+    margin-bottom: 2px;
+  }
+
+  .emoji-search {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+    border: 2px solid #aaaaaa80;
+    border-radius: 100rem;
+
+    &:focus-within {
+      border: 2px solid #00aadd;
+
+    }
+
+    input {
+      margin-left: .25rem;
+      flex: 1;
+      outline: none;
+      caret-color: #00aadd;
+      background-color: transparent;
+    }
+  }
+
+  .emoji-groups {
+    padding: .3rem 0;
+    display: flex;
+    justify-content: space-between;
+    ;
+
+    .emoji-group {
+      cursor: pointer;
+      border-radius: 2px;
+      padding: .25rem .4rem;
+      position: relative;
+
+      &:hover {
+        background-color: #00aadd20;
+
+        img {
+          filter: unset;
+        }
+      }
+
+      .selected {
+        filter: unset;
+      }
+
+      img {
+        filter: grayscale(100%);
+        width: 20px;
+        height: 20px;
+      }
+
+      .bottom-block{
+        height:4px;
+        width: 100%;
+        position: absolute;
+        bottom:-4px;
+        left:0;
+        border-radius:2px;
+      }
+
+      .selected2{
+        background-color: #00aadd;
+      }
+
+    }
+
+  }
+
+}
+</style>
