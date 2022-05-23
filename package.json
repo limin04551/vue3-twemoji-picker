@@ -18,8 +18,7 @@
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
-    "test": "vitest",
-    "build:emoji": "vue-cli-service build --target lib --dest lib src/components/index.js"
+    "test": "vitest"
   },
   "dependencies": {
     "@vueuse/core": "^8.3.1",
