@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// import { EmojiPicker } from '/dist/vue3-twemoji-picker.es.js'
+// import '/dist/style.css'
 
 </script>
 

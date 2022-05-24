@@ -1,5 +1,6 @@
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/111864893-a457fd00-899e-11eb-9f05-f4b88987541d.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
+
+  <img src='https://s1.ax1x.com/2022/05/24/XCPNcT.png' alt='vue3 twemoji picker' width='600'/>
 </p>
 
 <h6 align='center'>
