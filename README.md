@@ -1,88 +1,67 @@
 <p align='center'>
 
   <img src='https://s1.ax1x.com/2022/05/24/XCPNcT.png' alt='vue3 twemoji picker' width='600'/>
+  <img src='https://s1.ax1x.com/2022/05/24/XCnHoT.png' alt='vue3 twemoji picker' width='600'/>
 </p>
 
 <h6 align='center'>
-<a href="https://vitesse-lite.netlify.app/">Live Demo</a>
+<a href="https://vue3-twemoji-picker.netlify.app/">Live Demo</a>
 </h6>
-
-<h5 align='center'>
-<b>Lightweight version of <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
-</h5>
 
 <br>
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/antfu/vitesse-lite/blob/main/README.zh-CN.md">简体中文</a>
+<b>English</b> | <a href="https://github.com/limin04551/vue3-twemoji-picker/blob/main/README.zh-CN.md">简体中文</a>
 <!-- Contributors: Thanks for geting interested, however we DON'T accept new transitions to the README, thanks. -->
 </p>
-
-## Features
-
-- ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
-
-- 🗂 [File based routing](./src/pages)
-
-- 📦 [Components auto importing](./src/components)
-
-- 🎨 [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
-
-- 😃 Use icons from any icon sets in [Pure CSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
-
-- 🔥 Use the [new `<script setup>` style](https://github.com/vuejs/rfcs/pull/227)
-
-- ✅ Use [Vitest](http://vitest.dev/) for unit and components testing
-
-- 🦾 TypeScript, of course
-
-- ☁️ Deploy on Netlify, zero-config
-
-
 <br>
 
-See [Vitesse](https://github.com/antfu/vitesse) for full featureset.
+## 特性
 
+- ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - 就是快！
 
-## Dropped Features from [Vitesse](https://github.com/antfu/vitesse)
+- 😃 [Twitter-Emoji](https://github.com/twitter/twemoji)
 
-- ~~i18n~~
-- ~~Layouts~~
-- ~~SSG~~
-- ~~PWA~~
-- ~~Markdown~~
+- 🔥 使用 [新的 `<script setup>` 语法](https://github.com/vuejs/rfcs/pull/227)
 
-## Pre-packed
+- 🦾 TypeScript, 当然
+<br>
 
-### UI Frameworks
+## Installation:
+```bash
+npm install vue3-emoji-picker
+// or
+pnpm install vue3-emoji-picker
+// or
+yarn add vue3-emoji-picker
+```
 
-- [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
+## Usage:
+```bash
+// import picker compopnent
+import EmojiPicker from 'vue3-twemoji-picker-final'
 
-### Icons
+// import css
+import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
 
-- [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
-- [Pure CSS Icons via UnoCSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
+<template>
+  <div flex="~ col" items-center>
+    <div flex>
+      <EmojiPicker @select="handleSelectEmoji"/>
+      <EmojiPicker locals="en" @select="handleSelectEmoji" />
+    </div>
+    <Footer />
+  </div>
+</template>
+```
 
-### Plugins
-
-- [Vue Router](https://github.com/vuejs/vue-router)
-  - [`vite-plugin-pages`](https://github.com/hannoeru/vite-plugin-pages) - file system based routing
-- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
-- [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - components auto import
-- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
 
 ## Try it now!
 
-### GitHub Template
+### GitHub 
 
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-lite/generate).
+[](https://github.com/limin04551/vue3-twemoji-picker).
 
-### Clone to local
 
-If you prefer to do it manually with the cleaner git history
 
-```bash
-npx degit antfu/vitesse-lite my-vitesse-app
-cd my-vitesse-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
-```
+
