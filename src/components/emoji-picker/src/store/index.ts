@@ -1,25 +1,33 @@
 import { DEFAULT_EMOJI, SKIN_TONE_NEUTRAL } from './../emoji-picker.d'
-import type { EmojiInfo, Locals, SkinTone, State, Store } from './../emoji-picker.d'
+import type { EmojiInfo, Options, SkinTone, State, Store } from './../emoji-picker.d'
 import emojiGroupsEn from '~/assets/json/emojis/emojis-en.json'
 import emojiGroupsZhCN from '~/assets/json/emojis/emojis-zh_CN.json'
 import textInfoEn from '~/assets/json/emojis/text-en.json'
 import textInfoZhCn from '~/assets/json/emojis/text-zh_CN.json'
 // import emojiGroups from '~/assets/json/emojis/zh-CN.json'
 
-const defaultOptions: Record<string, any> = {
-  native: false,
-  hasSearch: true,
-  hasGroupIcons: true,
-  hasGroupNames: true,
-  hasSkinTones: true,
-  stickyGroupNames: true,
-  searchPlaceholder: '搜索表情符号',
-  disabledGroups: [],
-}
+export default function useStore(options: Options): Store {
+  const defaultOptions: Record<string, any> = {
+    locals: 'zh_CN',
+    native: false,
+    hasSearch: true,
+    hasGroupIcons: true,
+    hasGroupNames: true,
+    hasSkinTones: true,
+    stickyGroupNames: true,
+    recentRecords: true,
+    imgSrc: import.meta.env.DEV ? '/img/' : '/node_modules/vue3-twemoji-picker-final/dist/',
+    disabledGroups: [],
+  }
 
-export default function useStore(locals: Locals = 'zh_CN'): Store {
-  const emojiGroups = locals === 'zh_CN' ? emojiGroupsZhCN : emojiGroupsEn
-  const staticText = locals === 'zh_CN' ? textInfoZhCn : textInfoEn
+  options = {
+    ...defaultOptions,
+    ...options,
+  }
+
+  const emojiGroups = options.locals === 'zh_CN' ? emojiGroupsZhCN : emojiGroupsEn
+  const staticText = options.locals === 'zh_CN' ? textInfoZhCn : textInfoEn
+
   const state = reactive<State>({
     emojiGroups,
     search: '',
@@ -27,12 +35,14 @@ export default function useStore(locals: Locals = 'zh_CN'): Store {
     currentEmoji: DEFAULT_EMOJI,
     skinTone: 'neutral',
     staticText,
-    options: defaultOptions,
+    options,
   })
 
   const str = localStorage.getItem('recentEmojis')
   const recentEmojis = JSON.parse(str || '[]')
   state.emojiGroups[0].emojis = recentEmojis
+  if (!options.recentRecords)
+    emojiGroups.splice(0, 1)
   /**
    * Update search text.
    * @param value - string.
@@ -104,6 +114,8 @@ export default function useStore(locals: Locals = 'zh_CN'): Store {
   }
 
   const saveRecentEmoji = (emoji: EmojiInfo) => {
+    if (!options.recentRecords)
+      return
     const recentEmojis = state.emojiGroups[0].emojis.filter((e: EmojiInfo) => {
       return e.r!.u !== emoji.r!.u
     })

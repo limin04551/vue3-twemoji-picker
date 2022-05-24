@@ -1,6 +1,6 @@
 <p align='center'>
 
-  <img src='https://s1.ax1x.com/2022/05/24/XCPNcT.png' alt='vue3 twemoji picker' width='600'/>
+  <img src='https://s1.ax1x.com/2022/05/24/XPKrkV.png' alt='vue3 twemoji picker' width='600'/>
   <img src='https://s1.ax1x.com/2022/05/24/XCnHoT.png' alt='vue3 twemoji picker' width='600'/>
 </p>
 
@@ -46,9 +46,14 @@ import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
 
 <template>
   <div flex="~ col" items-center>
-    <div flex>
-      <EmojiPicker @select="handleSelectEmoji"/>
-      <EmojiPicker locals="en" @select="handleSelectEmoji" />
+    <div flex h120>
+      <EmojiPicker @select="selectEmoji" />
+      <EmojiPicker
+        :options="{native:true,locals:'en',hasGroupIcons:true,hasSearch:false,
+                   hasGroupNames:false,stickyGroupNames:false,hasSkinTones:false,
+                   recentRecords:false,}"
+        @select="selectEmoji"
+      />
     </div>
     <Footer />
   </div>

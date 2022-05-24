@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { STORE_KEY, SVG_EMOJI_IMG_SRC } from './emoji-picker.d'
+import { STORE_KEY } from './emoji-picker.d'
+import { unicodeToEmoji } from './helpers'
 
 const store = inject(STORE_KEY)
 const { options, search, emojiGroups, activeGroup, staticText } = toRefs(store!.state!)
@@ -13,7 +14,7 @@ const searchValue = computed({
 
 </script>
 <template>
-  <div v-if="!options.hasGroupIcons || options.hasSearch" class="emoji-header">
+  <div v-if="options.hasGroupIcons || options.hasSearch" class="emoji-header">
     <div v-if="options.hasSearch" class="emoji-search">
       <div i-lucide-search c="#aaaaaa80" />
       <input ref="searchContainer" v-model="searchValue" type="text" :placeholder="staticText.search_placeholder">
@@ -23,11 +24,12 @@ const searchValue = computed({
         v-for="group in emojiGroups" :key="group.key" class="emoji-group"
         @click="group.emojis.length > 0 ? updateActiveGroup(group.key) : ''"
       >
-        <img :class="group.key === activeGroup && searchValue==''? 'selected' : ''" :src="`${SVG_EMOJI_IMG_SRC}${group.u}.svg`" alt="">
+        <span v-if="options.native">{{ unicodeToEmoji(group.u) }}</span>
+        <img v-else :class="group.key === activeGroup && searchValue==''? 'selected' : ''" :src="`${options.imgSrc}svg/${group.u}.svg`" alt="">
         <div :class="['bottom-block',group.key === activeGroup && searchValue==''?'selected2':'']" />
       </div>
     </div>
-    <div v-if="options.hasGroupIcons || options.hasSearch" class="emoji-spacing" />
+    <div v-if="options.hasGroupIcons " class="emoji-spacing" />
   </div>
 </template>
 <style lang="scss" scoped>

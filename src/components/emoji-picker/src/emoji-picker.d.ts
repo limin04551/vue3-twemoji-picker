@@ -1,8 +1,8 @@
 import type { InjectionKey } from 'vue'
 export type Locals = 'en' | 'zh_CN'
 
-export const ALL_EMOJI_IMG_SRC = '/img/twemoji.png'
-export const SVG_EMOJI_IMG_SRC = '/img/svg/'
+// export const ALL_EMOJI_IMG_SRC = '/img/twemoji.png'
+// export const SVG_EMOJI_IMG_SRC = '/img/svg/'
 export const SKIN_TONE_NEUTRAL = 'neutral'
 export const SKIN_TONE_LIGHT = '1f3fb'
 export const SKIN_TONE_MEDIUM_LIGHT = '1f3fc'
@@ -27,6 +27,19 @@ export interface EmojiGroup {
   title: string
   u: string
   y?: number
+}
+
+export interface Options {
+  locals?: Locals
+  native?: boolean
+  hasSearch?: boolean
+  hasGroupIcons?: boolean
+  hasGroupNames?: boolean
+  hasSkinTones?: boolean
+  stickyGroupNames?: boolean
+  recentRecords?: boolean
+  imgSrc?: string
+  disabledGroups?: string[]
 }
 
 export const DEFAULT_EMOJI: EmojiInfo = {

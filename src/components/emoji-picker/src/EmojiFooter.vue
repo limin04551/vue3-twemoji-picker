@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { isMac, unicodeToEmoji } from './helpers'
 import type { SkinTone } from './emoji-picker.d'
-import { ALL_EMOJI_IMG_SRC, EmojiHeight, EmojiWidth, SKIN_TONES, STORE_KEY } from './emoji-picker.d'
+import { EmojiHeight, EmojiWidth, SKIN_TONES, STORE_KEY } from './emoji-picker.d'
 const platform = isMac() ? 'is-mac' : ''
 const store = inject(STORE_KEY)
 const { currentEmoji, options, skinTone } = toRefs(store!.state!)
@@ -25,7 +25,7 @@ const toggleSkinToneState = (tone: SkinTone) => {
 
         <span v-if="options.native">{{ unicodeToEmoji(currentEmoji.r!.u) }}</span>
         <div
-          v-else class="emoji-bg" :style="`background-image: url(${ALL_EMOJI_IMG_SRC});
+          v-else class="emoji-bg" :style="`background-image: url(${options.imgSrc}twemoji.png);
         background-position: ${currentEmoji.r!.x * -EmojiWidth * 1.5}px ${currentEmoji.r!.y * -EmojiHeight * 1.5}px;
         `"
         />
@@ -60,6 +60,10 @@ const toggleSkinToneState = (tone: SkinTone) => {
     width: 80%;
     display: flex;
     align-items: center;
+
+    .is-mac {
+      font-family: 'Apple Color Emoji';
+    }
 
     .current-emoji {
       margin-right: 1rem;

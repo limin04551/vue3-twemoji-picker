@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-// import type { Store } from './emoji-picker.d'
 import type { EmojiGroup, EmojiInfo } from './emoji-picker.d'
-import { ALL_EMOJI_IMG_SRC, EmojiHeight, EmojiWidth, STORE_KEY } from './emoji-picker.d'
+import { EmojiHeight, EmojiWidth, STORE_KEY } from './emoji-picker.d'
 import { filterEmojis, isMac, unicodeToEmoji } from './helpers'
 
 const store = inject(STORE_KEY)
-const { activeGroup, staticText } = toRefs(store!.state!)
+const { options, activeGroup, staticText } = toRefs(store!.state!)
 const { updateEmoji, updateActiveGroup, saveRecentEmoji, clearRecentEmoji } = store!
 const state = store!.state
 
@@ -31,6 +30,7 @@ const selectEmoji = (emoji: EmojiInfo) => {
     ...emoji,
     t: state.skinTone,
     i: unicodeToEmoji(emoji.r!.u),
+    imgSrc: !options.value.native ? `${options.value.imgSrc + emoji.r!.u}.svg` : '',
   })
 
   saveRecentEmoji(emoji)
@@ -114,7 +114,7 @@ onMounted(() => {
             >
               <span v-if="state.options.native">{{ unicodeToEmoji(emoji.r!.u) }}</span>
               <div
-                v-else class="emoji-bg" :style="`background-image: url(${ALL_EMOJI_IMG_SRC});
+                v-else class="emoji-bg" :style="`background-image: url(${options.imgSrc}twemoji.png);
               background-position: ${emoji.r!.x * -EmojiWidth}px ${emoji.r!.y * -EmojiHeight}px;
               `"
               />
@@ -132,6 +132,10 @@ onMounted(() => {
   <!-- {{ store!.state }} -->
 </template>
 <style scoped lang="scss">
+
+.is-mac{
+   font-family: 'Apple Color Emoji';
+}
 .emoji-body {
 
   position: relative;
@@ -158,7 +162,8 @@ onMounted(() => {
     display: block;
   }
 
-  height: 20rem;
+  // height: 20rem;
+  flex:1;
   padding-left: 6px;
 
   overflow-y: auto;
