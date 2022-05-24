@@ -1,7 +1,7 @@
 <p align='center'>
 
-  <img src='https://s1.ax1x.com/2022/05/24/XPKrkV.png' alt='vue3 twemoji picker' width='600'/>
-  <img src='https://s1.ax1x.com/2022/05/24/XCnHoT.png' alt='vue3 twemoji picker' width='600'/>
+  <img src='https://s1.ax1x.com/2022/05/24/XPBPIO.png' alt='vue3 twemoji picker' width='600'/>
+  <img src='https://s1.ax1x.com/2022/05/24/XPBZQA.png' alt='vue3 twemoji picker' width='600'/>
 </p>
 
 <h6 align='center'>
@@ -44,12 +44,36 @@ import EmojiPicker from 'vue3-twemoji-picker-final'
 // import css
 import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
 
+const selectEmoji = (e) => {
+  console.log(e, 'e')
+//   {
+//     "n": [
+//         "penguin" //desc name
+//     ],
+//     "u": {
+//         "u": "1f427", //without tone
+//         "x": 12, // All pictures of a picture of a picture of the x coordinates
+//         "y": 31  //All pictures of a picture of a picture of the y coordinates
+//     },
+//     "r": {
+//         "u": "1f427",//with skin tone
+//         "x": 12,
+//         "y": 31
+//     },
+//     "t": "neutral", skin tone
+//     "i": "🐧", // emoji unicode
+//     "imgSrc": "/img/1f427.svg" //img path ,you can use cdn
+// }
+}
+</script>
+
 <template>
   <div flex="~ col" items-center>
     <div flex h120>
       <EmojiPicker @select="selectEmoji" />
+      <EmojiPicker :options="{'locals':'en'}" @select="selectEmoji" />
       <EmojiPicker
-        :options="{native:true,locals:'en',hasGroupIcons:true,hasSearch:false,
+        :options="{imgSrc:'/img/',native:true,locals:'en',hasGroupIcons:true,hasSearch:false,
                    hasGroupNames:false,stickyGroupNames:false,hasSkinTones:false,
                    recentRecords:false,}"
         @select="selectEmoji"
@@ -58,6 +82,7 @@ import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
     <Footer />
   </div>
 </template>
+
 ```
 
 

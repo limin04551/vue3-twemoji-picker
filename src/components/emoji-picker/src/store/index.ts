@@ -25,9 +25,16 @@ export default function useStore(options: Options): Store {
     ...options,
   }
 
-  const emojiGroups = options.locals === 'zh_CN' ? emojiGroupsZhCN : emojiGroupsEn
   const staticText = options.locals === 'zh_CN' ? textInfoZhCn : textInfoEn
-
+  let emojiGroups = options.locals === 'zh_CN' ? emojiGroupsZhCN : emojiGroupsEn
+  if (options.recentRecords) {
+    const str = localStorage.getItem('recentEmojis')
+    const recentEmojis = JSON.parse(str || '[]')
+    emojiGroups[0].emojis = recentEmojis
+  }
+  else {
+    emojiGroups = emojiGroups.slice(1)
+  }
   const state = reactive<State>({
     emojiGroups,
     search: '',
@@ -38,11 +45,6 @@ export default function useStore(options: Options): Store {
     options,
   })
 
-  const str = localStorage.getItem('recentEmojis')
-  const recentEmojis = JSON.parse(str || '[]')
-  state.emojiGroups[0].emojis = recentEmojis
-  if (!options.recentRecords)
-    emojiGroups.splice(0, 1)
   /**
    * Update search text.
    * @param value - string.
