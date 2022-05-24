@@ -16,7 +16,7 @@ export default function useStore(options: Options): Store {
     hasSkinTones: true,
     stickyGroupNames: true,
     recentRecords: true,
-    imgSrc: import.meta.env.DEV ? '/img/' : '/node_modules/vue3-twemoji-picker-final/dist/',
+    imgSrc: import.meta.env.DEV ? '/img/' : '/node_modules/vue3-twemoji-picker-final/dist/img/',
     disabledGroups: [],
   }
 
