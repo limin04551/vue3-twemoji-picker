@@ -1,6 +1,6 @@
 {
   "name": "vue3-twemoji-picker-final",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": false,
   "packageManager": "pnpm@7.0.0",
   "keywords": [
@@ -11,6 +11,8 @@
     "twemoji",
     "emoji"
   ],
+  "license": "MIT",
+  "author": "limin04551",
   "bugs": {
     "url": "https://github.com/limin04551/vue3-twemoji-picker/issues"
   },
