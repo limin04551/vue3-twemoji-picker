@@ -29,11 +29,11 @@
 
 ## Installation:
 ```bash
-npm install vue3-emoji-picker
+npm install vue3-twemoji-picker-final
 // or
-pnpm install vue3-emoji-picker
+pnpm install vue3-twemoji-picker-final
 // or
-yarn add vue3-emoji-picker
+yarn add vue3-twemoji-picker-final
 ```
 
 ## Usage:
@@ -60,7 +60,7 @@ import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
 
 ### GitHub 
 
-[](https://github.com/limin04551/vue3-twemoji-picker).
+[https://github.com/limin04551/vue3-twemoji-picker](https://github.com/limin04551/vue3-twemoji-picker).
 
 
 

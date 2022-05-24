@@ -1,8 +1,21 @@
 {
+
   "name": "vue3-twemoji-picker-final",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": false,
   "packageManager": "pnpm@7.0.0",
+  "keywords": [
+    "vue3-emoji-picker",
+    "vue3-twemoji-picker",
+    "emoji-picker",
+    "twemoji-picker",
+    "twemoji",
+    "emoji"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/limin04551/vue3-twemoji-picker"
+  },
   "main": "./dist/vue3-twemoji-picker.umd.js",
   "module": "./dist/vue3-twemoji-picker.es.js",
   "exports": {
