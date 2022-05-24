@@ -38,8 +38,9 @@ yarn add vue3-twemoji-picker-final
 
 ## Usage:
 ```bash
+<script setup lang="ts">
 // import picker compopnent
-import EmojiPicker from 'vue3-twemoji-picker-final'
+import { EmojiPicker } from 'vue3-twemoji-picker-final'
 
 // import css
 import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
@@ -87,6 +88,7 @@ const selectEmoji = (e) => {
 
 
 ## Try it now!
+### This is my first TypeScript project. If it is helpful to you, please give me a start ~ ⭐️
 
 ### GitHub 
 

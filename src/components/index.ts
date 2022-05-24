@@ -8,8 +8,8 @@ const install = (app: App) => {
   app.component(EmojiPicker.name, EmojiPicker)
 }
 
-export {
+export { EmojiPicker }
+export default {
   install,
-  EmojiPicker,
 }
 

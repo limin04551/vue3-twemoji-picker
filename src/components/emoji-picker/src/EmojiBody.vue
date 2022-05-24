@@ -141,7 +141,7 @@ onMounted(() => {
   position: relative;
 
   $size: 6px;
-  scrollbar-color: #393d3f rgba(#000, 0.1);
+  $scrollbar-color: rgba(#888, 0.6);
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -154,7 +154,7 @@ onMounted(() => {
 
   &::-webkit-scrollbar-thumb {
     display: none;
-    background: rgba(#000, 0.3);
+    background: $scrollbar-color;
     border-radius: 5px;
   }
 
@@ -172,7 +172,7 @@ onMounted(() => {
     padding: .2rem .3rem;
     backdrop-filter: blur(1px);
     font-weight: bold;
-    background-color: #ffffff80;
+    background-color: #ffffff40;
     display:flex;
     justify-content:space-between;
 

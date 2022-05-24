@@ -16,7 +16,7 @@ const searchValue = computed({
 <template>
   <div v-if="options.hasGroupIcons || options.hasSearch" class="emoji-header">
     <div v-if="options.hasSearch" class="emoji-search">
-      <div i-lucide-search c="#aaaaaa80" />
+      <div i-lucide-search c="#88888880" />
       <input ref="searchContainer" v-model="searchValue" type="text" :placeholder="staticText.search_placeholder">
     </div>
     <div v-if="options.hasGroupIcons" class="emoji-groups">
@@ -24,7 +24,7 @@ const searchValue = computed({
         v-for="group in emojiGroups" :key="group.key" class="emoji-group"
         @click="group.emojis.length > 0 ? updateActiveGroup(group.key) : ''"
       >
-        <span v-if="options.native">{{ unicodeToEmoji(group.u) }}</span>
+        <span v-if="options.native" :class="group.key === activeGroup && searchValue==''? 'selected' : ''">{{ unicodeToEmoji(group.u) }}</span>
         <img v-else :class="group.key === activeGroup && searchValue==''? 'selected' : ''" :src="`${options.imgSrc}svg/${group.u}.svg`" alt="">
         <div :class="['bottom-block',group.key === activeGroup && searchValue==''?'selected2':'']" />
       </div>
@@ -47,12 +47,13 @@ const searchValue = computed({
     display: flex;
     align-items: center;
     padding: .5rem 1rem;
-    border: 2px solid #aaaaaa80;
+    // border: 1px solid #88888880;
+    box-shadow: inset 0 0 0 1px  #88888880;
     border-radius: 100rem;
-
+    box-sizing: content-box;
     &:focus-within {
-      border: 2px solid #00aadd;
-
+      box-shadow: inset 0 0 0 2px #00aadd;
+      // border: 2px solid #00aadd;
     }
 
     input {
@@ -78,10 +79,13 @@ const searchValue = computed({
 
       &:hover {
         background-color: #00aadd20;
-
         img {
           filter: unset;
         }
+      }
+
+      span{
+        filter: grayscale(100%);
       }
 
       .selected {

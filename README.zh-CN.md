@@ -38,31 +38,32 @@ yarn add vue3-twemoji-picker-final
 
 ## 使用:
 ```bash
-// import picker compopnent
-import EmojiPicker from 'vue3-twemoji-picker-final'
+<script setup lang="ts">
+// 导入组件
+import { EmojiPicker } from 'vue3-twemoji-picker-final'
 
-// import css
+// 导入样式
 import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
 
 const selectEmoji = (e) => {
   console.log(e, 'e')
 //   {
 //     "n": [
-//         "penguin" //desc name
+//         "penguin" //描述信息
 //     ],
 //     "u": {
-//         "u": "1f427", //without tone
-//         "x": 12, // All pictures of a picture of a picture of the x coordinates
-//         "y": 31  //All pictures of a picture of a picture of the y coordinates
+//         "u": "1f427", //无皮肤信息
+//         "x": 12, // 所有图片的聚合图中的x坐标
+//         "y": 31  //所有图片的聚合图中的y坐标
 //     },
 //     "r": {
-//         "u": "1f427",//with skin tone
+//         "u": "1f427",//有皮肤信息
 //         "x": 12,
 //         "y": 31
 //     },
-//     "t": "neutral", skin tone
+//     "t": "neutral", 皮肤颜色
 //     "i": "🐧", // emoji unicode
-//     "imgSrc": "/img/1f427.svg" //img path ,you can use cdn
+//     "imgSrc": "/img/1f427.svg" //图片地址,可以替换为CDN
 // }
 }
 </script>
@@ -87,6 +88,7 @@ const selectEmoji = (e) => {
 
 
 ## 现在可以试试!
+### 这是我第一个typescript项目,如果对您有帮助,请给我个start~⭐️
 
 ### GitHub 
 
