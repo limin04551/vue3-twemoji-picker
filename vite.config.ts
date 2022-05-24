@@ -7,7 +7,6 @@ import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
-// import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   resolve: {
@@ -19,7 +18,6 @@ export default defineConfig({
     Vue({
       reactivityTransform: true,
     }),
-    // dts(),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages(),
 
@@ -49,13 +47,6 @@ export default defineConfig({
     environment: 'jsdom',
   },
   // build: {
-  //   // terserOptions: {
-  //   //   compress: {
-  //   //     keep_infinity: true, // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
-  //   //     drop_console: true, // 生产环境去除 console
-  //   //     drop_debugger: true, // 生产环境去除 debugger
-  //   //   },
-  //   // },
   //   lib: {
   //     entry: path.resolve(__dirname, 'src/components/index.ts'),
   //     name: 'vue3-twemoji-picker',
