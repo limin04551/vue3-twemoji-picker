@@ -37,6 +37,12 @@ yarn add vue3-twemoji-picker-final
 ```
 
 ## Usage:
+you should copy images to your project folder and then 'imgSrc' param use your path,Otherwise, the picture will access the dependency package of node_modules
+
+<p align='center'>
+  <img src='https://s1.ax1x.com/2022/05/25/XkdwCD.png' alt='vue3 twemoji picker' width='800'/>
+</p>
+
 ```bash
 <script setup lang="ts">
 // import picker compopnent
@@ -45,26 +51,27 @@ import { EmojiPicker } from 'vue3-twemoji-picker-final'
 // import css
 import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
 
-const selectEmoji = (e) => {
+const selectEmoji = (e: any) => {
   console.log(e, 'e')
 //   {
-//     "n": [
-//         "penguin" //desc name
+//     "n": [  //desc name
+//         "smiling face with heart-shaped eyes",
+//         "heart_eyes"
 //     ],
 //     "u": {
-//         "u": "1f427", //without tone
-//         "x": 12, // All pictures of a picture of a picture of the x coordinates
-//         "y": 31  //All pictures of a picture of a picture of the y coordinates
+//         "u": "1f60d",//without tone
+//         "x": 12,     // All pictures of a picture of a picture of the x coordinates
+//         "y": 0       //All pictures of a picture of a picture of the y coordinates
 //     },
 //     "r": {
-//         "u": "1f427",//with skin tone
+//         "u": "1f60d",//with skin tone
 //         "x": 12,
-//         "y": 31
+//         "y": 0
 //     },
-//     "t": "neutral", skin tone
-//     "i": "🐧", // emoji unicode
-//     "imgSrc": "/img/1f427.svg" //img path ,you can use cdn
-// }
+//     "t": "neutral", // skin tone
+//     "i": "😍",      // emoji unicode
+//     "imgSrc": "https://cdn.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/svg/1f60d.svg"
+// }              //img path ,you can use cdn
 }
 </script>
 
@@ -72,7 +79,7 @@ const selectEmoji = (e) => {
   <div flex="~ col" items-center>
     <div flex h120>
       <EmojiPicker @select="selectEmoji" />
-      <EmojiPicker :options="{'locals':'en'}" @select="selectEmoji" />
+      <EmojiPicker :options="{imgSrc:'https://cdn.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/','locals':'en'}" @select="selectEmoji" />
       <EmojiPicker
         :options="{imgSrc:'/img/',native:true,locals:'en',hasGroupIcons:true,hasSearch:false,
                    hasGroupNames:false,stickyGroupNames:false,hasSkinTones:false,

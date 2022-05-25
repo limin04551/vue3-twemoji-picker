@@ -37,6 +37,11 @@ yarn add vue3-twemoji-picker-final
 ```
 
 ## 使用:
+你需要把图片复制到自己的项目中,然后'imgSrc'参数填写自己的图片路径,否则打包后将会访问不到图片
+
+<p align='center'>
+  <img src='https://s1.ax1x.com/2022/05/25/XkdwCD.png' alt='vue3 twemoji picker' width='800'/>
+</p>
 ```bash
 <script setup lang="ts">
 // 导入组件

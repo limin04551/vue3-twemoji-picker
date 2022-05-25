@@ -30,7 +30,7 @@ const selectEmoji = (emoji: EmojiInfo) => {
     ...emoji,
     t: state.skinTone,
     i: unicodeToEmoji(emoji.r!.u),
-    imgSrc: !options.value.native ? `${options.value.imgSrc + emoji.r!.u}.svg` : '',
+    imgSrc: !options.value.native ? `${`${options.value.imgSrc}svg/${emoji.r!.u}`}.svg` : '',
   })
 
   saveRecentEmoji(emoji)
