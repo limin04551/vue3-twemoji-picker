@@ -40,7 +40,7 @@ yarn add vue3-twemoji-picker-final
 you should copy images to your project folder and then 'imgSrc' param use your path,Otherwise, the picture will access the dependency package of node_modules
 
 <p align='center'>
-  <img src='https://s1.ax1x.com/2022/05/25/XkdwCD.png' alt='vue3 twemoji picker' width='800'/>
+  <img src='https://s1.ax1x.com/2022/05/25/XkdwCD.png' alt='vue3 twemoji picker' width='300'/>
 </p>
 
 ```bash

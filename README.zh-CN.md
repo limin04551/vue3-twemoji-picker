@@ -40,7 +40,7 @@ yarn add vue3-twemoji-picker-final
 你需要把图片复制到自己的项目中,然后'imgSrc'参数填写自己的图片路径,否则打包后将会访问不到图片
 
 <p align='center'>
-  <img src='https://s1.ax1x.com/2022/05/25/XkdwCD.png' alt='vue3 twemoji picker' width='800'/>
+  <img src='https://s1.ax1x.com/2022/05/25/XkdwCD.png' alt='vue3 twemoji picker' width='300'/>
 </p>
 ```bash
 <script setup lang="ts">
@@ -68,8 +68,8 @@ const selectEmoji = (e) => {
 //     },
 //     "t": "neutral", 皮肤颜色
 //     "i": "🐧", // emoji unicode
-//     "imgSrc": "/img/1f427.svg" //图片地址,可以替换为CDN
-// }
+//     "imgSrc": "https://fastly.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/svg/1f60d.svg"
+// }              //img path ,you can use cdn
 }
 </script>
 
@@ -77,8 +77,8 @@ const selectEmoji = (e) => {
   <div flex="~ col" items-center>
     <div flex h120>
       <EmojiPicker @select="selectEmoji" />
-      <EmojiPicker :options="{'locals':'en'}" @select="selectEmoji" />
-      <EmojiPicker
+      <EmojiPicker :options="{imgSrc:'https://fastly.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/','locals':'en'}" @select="selectEmoji" />
+     <EmojiPicker
         :options="{imgSrc:'/img/',native:true,locals:'en',hasGroupIcons:true,hasSearch:false,
                    hasGroupNames:false,stickyGroupNames:false,hasSkinTones:false,
                    recentRecords:false,}"
