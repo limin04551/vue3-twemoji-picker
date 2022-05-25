@@ -42,6 +42,7 @@ yarn add vue3-twemoji-picker-final
 <p align='center'>
   <img src='https://s1.ax1x.com/2022/05/25/XkdwCD.png' alt='vue3 twemoji picker' width='300'/>
 </p>
+
 ```bash
 <script setup lang="ts">
 // 导入组件
@@ -88,7 +89,6 @@ const selectEmoji = (e) => {
     <Footer />
   </div>
 </template>
-
 ```
 
 

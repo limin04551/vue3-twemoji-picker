@@ -70,7 +70,7 @@ const selectEmoji = (e: any) => {
 //     },
 //     "t": "neutral", // skin tone
 //     "i": "😍",      // emoji unicode
-//     "imgSrc": "https://cdn.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/svg/1f60d.svg"
+//     "imgSrc": "https://fastly.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/svg/1f60d.svg"
 // }              //img path ,you can use cdn
 }
 </script>
@@ -79,7 +79,7 @@ const selectEmoji = (e: any) => {
   <div flex="~ col" items-center>
     <div flex h120>
       <EmojiPicker @select="selectEmoji" />
-      <EmojiPicker :options="{imgSrc:'https://cdn.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/','locals':'en'}" @select="selectEmoji" />
+      <EmojiPicker :options="{imgSrc:'https://fastly.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/','locals':'en'}" @select="selectEmoji" />
       <EmojiPicker
         :options="{imgSrc:'/img/',native:true,locals:'en',hasGroupIcons:true,hasSearch:false,
                    hasGroupNames:false,stickyGroupNames:false,hasSkinTones:false,
