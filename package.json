@@ -1,6 +1,6 @@
 {
   "name": "vue3-twemoji-picker-final",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": false,
   "packageManager": "pnpm@7.0.0",
   "keywords": [
