@@ -49,7 +49,7 @@ you should copy images to your project folder and then 'imgSrc' param use your p
 import { EmojiPicker } from 'vue3-twemoji-picker-final'
 
 // import css
-import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
+import '/node_modules/vue3-twemoji-picker-final/dist/style.css'
 
 const selectEmoji = (e: any) => {
   console.log(e, 'e')
@@ -93,6 +93,11 @@ const selectEmoji = (e: any) => {
 
 ```
 
+if use TypeScript, add your own declaration in a declaration file such as index.d.ts(maybe under the project root)
+
+```javascript
+ declare module 'vue3-twemoji-picker-final'
+```
 
 ## Try it now!
 ### This is my first TypeScript project. If it is helpful to you, please give me a start ~ ⭐️

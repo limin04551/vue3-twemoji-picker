@@ -49,7 +49,7 @@ yarn add vue3-twemoji-picker-final
 import { EmojiPicker } from 'vue3-twemoji-picker-final'
 
 // 导入样式
-import 'node_modules/vue3-twemoji-picker-final/dist/style.css'
+import '/node_modules/vue3-twemoji-picker-final/dist/style.css'
 
 const selectEmoji = (e) => {
   console.log(e, 'e')
@@ -91,6 +91,11 @@ const selectEmoji = (e) => {
 </template>
 ```
 
+如果使用TypeScript, 在index.d.ts等声明文件中添加自己的声明（可能在项目根目录下）
+
+```javascript
+ declare module 'vue3-twemoji-picker-final'
+```
 
 ## 现在可以试试!
 ### 这是我第一个typescript项目,如果对您有帮助,请给我个start~⭐️

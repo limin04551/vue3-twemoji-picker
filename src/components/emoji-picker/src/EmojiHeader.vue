@@ -59,6 +59,7 @@ const searchValue = computed({
     input {
       margin-left: .25rem;
       flex: 1;
+      border:none;
       outline: none;
       caret-color: #00aadd;
       background-color: transparent;
