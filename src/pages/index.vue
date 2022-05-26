@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import { EmojiPicker } from '/dist/vue3-twemoji-picker.es.js'
+import { EmojiPicker } from '/dist/vue3-twemoji-picker.es.js'
 // import '/dist/style.css'
 // console.log(EmojiPicker, 'EmojiPicker')
 
@@ -30,7 +30,7 @@ const selectEmoji = (e: any) => {
 <template>
   <div flex="~ col" items-center>
     <div flex h120>
-      <EmojiPicker @select="selectEmoji" />
+      <!-- <EmojiPicker @select="selectEmoji" /> -->
       <EmojiPicker :options="{imgSrc:'https://fastly.jsdelivr.net/gh/limin04551/vue3-twemoji-picker/public/img/','locals':'en'}" @select="selectEmoji" />
       <EmojiPicker
         :options="{imgSrc:'/img/',native:true,locals:'en',hasGroupIcons:true,hasSearch:false,

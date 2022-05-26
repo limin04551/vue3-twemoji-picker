@@ -7,6 +7,7 @@ import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
+import libCss from 'vite-plugin-libcss'
 
 export default defineConfig({
   resolve: {
@@ -15,6 +16,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    libCss(),
     Vue({
       reactivityTransform: true,
     }),
@@ -47,6 +49,7 @@ export default defineConfig({
     environment: 'jsdom',
   },
   // build: {
+  //   cssCodeSplit: true,
   //   lib: {
   //     entry: path.resolve(__dirname, 'src/components/index.ts'),
   //     name: 'vue3-twemoji-picker',

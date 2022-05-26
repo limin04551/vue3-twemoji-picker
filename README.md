@@ -48,9 +48,6 @@ you should copy images to your project folder and then 'imgSrc' param use your p
 // import picker compopnent
 import { EmojiPicker } from 'vue3-twemoji-picker-final'
 
-// import css
-import '/node_modules/vue3-twemoji-picker-final/dist/style.css'
-
 const selectEmoji = (e: any) => {
   console.log(e, 'e')
 //   {

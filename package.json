@@ -1,6 +1,6 @@
 {
   "name": "vue3-twemoji-picker-final",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "private": false,
   "packageManager": "pnpm@7.0.0",
   "keywords": [
@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "build": "vite build ",
-    "builddev": "vite build --mode dev",
+    "builddev": "vite build  --mode dev",
     "dev": "vite --port 3334 --open",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
@@ -43,6 +43,7 @@
   "dependencies": {
     "@vueuse/core": "^8.3.1",
     "sass": "^1.52.0",
+    "vite-plugin-libcss": "^1.0.5",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
   },

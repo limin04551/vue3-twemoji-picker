@@ -48,8 +48,6 @@ yarn add vue3-twemoji-picker-final
 // 导入组件
 import { EmojiPicker } from 'vue3-twemoji-picker-final'
 
-// 导入样式
-import '/node_modules/vue3-twemoji-picker-final/dist/style.css'
 
 const selectEmoji = (e) => {
   console.log(e, 'e')

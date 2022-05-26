@@ -19,6 +19,7 @@ specifiers:
   unplugin-auto-import: ^0.7.1
   unplugin-vue-components: ^0.19.3
   vite: ^2.9.7
+  vite-plugin-libcss: ^1.0.5
   vite-plugin-pages: ^0.23.0
   vitest: ^0.10.1
   vue: ^3.2.33
@@ -28,6 +29,7 @@ specifiers:
 dependencies:
   '@vueuse/core': 8.3.1_vue@3.2.33
   sass: registry.npmmirror.com/sass/1.52.0
+  vite-plugin-libcss: 1.0.5_vite@2.9.7
   vue: 3.2.33
   vue-router: 4.0.14_vue@3.2.33
 
@@ -3694,6 +3696,14 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /vite-plugin-libcss/1.0.5_vite@2.9.7:
+    resolution: {integrity: sha512-NUQwWhn9j8fpRBwHeDr35a3TuRP0xvdIHtJni+3DcnPcq4Vrg+G5A3ZtCJ8y2EC83G97tBJ36svPdiIVuBEfsQ==}
+    peerDependencies:
+      vite: ^2
+    dependencies:
+      vite: 2.9.7_sass@1.52.0
+    dev: false
 
   /vite-plugin-pages/0.23.0_vite@2.9.7:
     resolution: {integrity: sha512-KEfW6WBfACCjMXoQY0mLEzfifwCTq6FlvvtXs2XSEe9Pd4QadZTNzHOPKHDsKpVXysRzbYxE8/c/Ao9+nXsQ7w==}
